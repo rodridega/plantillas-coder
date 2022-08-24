@@ -1,0 +1,29 @@
+include views/partials/head.pug
+
+main(class="container")
+  h1(class="text-center") Productos coder
+  form
+    div(class="form-group")
+      label(for="nombre") Nombre
+      input(type="text"
+        class="form-control"
+        id="nombre"
+        placeholder="Nombre")
+    div( class="form-group")
+      label( for="Precio") Precio
+      input(
+        type="number"
+        class="form-control"
+        id="precio"
+        placeholder="Precio")
+    div(class="form-group")
+      label( for="imagen") Url imagen
+      input(
+        type="text"
+        class="form-control"
+        id="imagen"
+        placeholder="imagen")
+    div
+      button( class="btn btn-success" onclick='guardarProducto()') Cargar Producto
+      a(href="productos" class="btn btn-primary m-3") Ver productos
+  script(src="js/main.js") 
