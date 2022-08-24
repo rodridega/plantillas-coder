@@ -6,15 +6,15 @@ const { engine } = require("express-handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/static", express.static(__dirname + "/public"));
+app.use(express.static('public'));
 
-/* 
+
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./Handlebars/views");
- */
-app.set("views", "./Pug");
-app.set("view engine", "pug");
+
+/* app.set("views", "./Pug");
+app.set("view engine", "pug"); */
 
 app.get("/", (req, res) => {
   res.render("datos", {mensaje: "Hola"});
@@ -22,8 +22,10 @@ app.get("/", (req, res) => {
 
 app.get("/productos", (req, res) => {
   console.log(productos);
-  res.render("productos", { productos });
+  res.render("productos", { productos: productos });
 });
+
+app.use("/", router)
 
 const PORT = process.env.PORT || 8080;
 

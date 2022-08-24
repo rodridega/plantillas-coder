@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    // POST '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado.
+    console.log(req.body);
     const { nombre, precio, urlImagen } = req.body
     if (!nombre || !precio || !urlImagen) {
         res.status(400).json({ error: 'por favor ingrese todos los datos' })
@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
         data.id = prodID
         productos.push(data)
         prodID += 1
-        res.send(data)
+        
     }
 })
 

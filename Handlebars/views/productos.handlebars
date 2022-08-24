@@ -1,6 +1,6 @@
 <main class="container">
   <h1>
-    {{title}}
+    Productos
   </h1>
   <div class="">
     <table class="table table-dark">
@@ -10,15 +10,20 @@
         <th>Foto</th>
       </thead>
       <tbody>
-        <tr>
-          {{#each productos}}
+        {{#each productos}}
+          <tr>
+
             <td> {{this.nombre}} </td>
             <td> {{this.precio}} </td>
             <td>
-              <img src="{{this.thumbnail}}" alt="{{this.nombre}}" />
+              <img
+                src="{{this.urlImagen}}"
+                alt="{{this.nombre}}"
+                class="w-25"
+              />
             </td>
-          {{/each}}
-        </tr>
+
+          </tr>{{/each}}
 
       </tbody>
     </table>

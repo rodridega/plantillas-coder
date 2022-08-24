@@ -3,13 +3,14 @@
     Productos Coder
   </h1>
 
-  <form>
+  <form action="/" method="POST">
     <div class="form-group">
       <label for="nombre">Nombre</label>
       <input
         type="text"
         class="form-control"
         id="nombre"
+        name="nombre"
         placeholder="Nombre"
       />
     </div>
@@ -18,6 +19,7 @@
       <input
         type="number"
         class="form-control"
+        name="precio"
         id="precio"
         placeholder="Precio"
       />
@@ -27,13 +29,14 @@
       <input
         type="text"
         class="form-control"
-        id="imagen"
+        id="urlImagen"
+        name="urlImagen"
         placeholder="imagen"
       />
     </div>
-
+    <button class="btn btn-success m-3" type="submit">Cargar Producto</button>
     <div>
-      <button class="btn btn-success" onclick='guardarProducto()'>Cargar Producto</button>
+
       <a href="productos" class="btn btn-primary m-3"> Ver productos </a>
     </div>
   </form>
