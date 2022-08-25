@@ -1,29 +1,33 @@
 include views/partials/head.pug
 
-main(class="container")
+div(class="container")
   h1(class="text-center") Productos coder
-  form
+  form(action="/" method="POST")
     div(class="form-group")
       label(for="nombre") Nombre
       input(type="text"
         class="form-control"
         id="nombre"
-        placeholder="Nombre")
+        placeholder="Nombre"
+        name="nombre")
     div( class="form-group")
       label( for="Precio") Precio
       input(
         type="number"
         class="form-control"
         id="precio"
-        placeholder="Precio")
+        placeholder="Precio"
+        name="precio")
     div(class="form-group")
       label( for="imagen") Url imagen
       input(
         type="text"
         class="form-control"
-        id="imagen"
-        placeholder="imagen")
-    div
-      button( class="btn btn-success" onclick='guardarProducto()') Cargar Producto
-      a(href="productos" class="btn btn-primary m-3") Ver productos
-  script(src="js/main.js") 
+        id="urlImagen"
+        placeholder="urlImagen"
+        name="urlImagen")
+      button(class="btn btn-success m-3" type="submit") Guardar
+    
+      
+  a(href="productos" class="btn btn-primary m-3") Ver productos
+

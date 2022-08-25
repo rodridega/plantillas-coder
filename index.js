@@ -9,19 +9,29 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 
+//Descomentar lineas segun que plantilla se quiera usar
+
+//HANDLEBARS
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./Handlebars/views");
 
+
+//PUG
 /* app.set("views", "./Pug");
 app.set("view engine", "pug"); */
 
+
+//EJS
+/* app.set("views", "./Ejs/views")
+app.set('view engine', '.ejs') */
+
+
 app.get("/", (req, res) => {
-  res.render("datos", {mensaje: "Hola"});
-});
+  res.render("datos");
+}); 
 
 app.get("/productos", (req, res) => {
-  console.log(productos);
   res.render("productos", { productos: productos });
 });
 

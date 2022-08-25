@@ -1,0 +1,21 @@
+include views/partials/head.pug
+
+main(class="container")
+  h1='Productos'
+    div
+    table(class="table table-dark")
+      thead
+        th='Nombre'
+        th='Precio'
+        th='Foto'      
+      tbody
+        each producto in productos
+          tr
+            td=producto.nombre
+            td=producto.precio
+            td
+              img(src=producto.urlImagen
+                alt=producto.nombre
+                height="30px"
+                )
+    a(href="/" class="btn btn-primary")='Volver al formulario'
